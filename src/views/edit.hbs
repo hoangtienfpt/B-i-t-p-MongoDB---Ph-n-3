@@ -1,0 +1,24 @@
+    <h2>Sua Nhan Vien</h2>
+  
+
+  <form action="/{{nhanviens._id}}/edit?_method=PUT" method="post">
+  <h2>{{nhanviens.Name}} sdscsa</h2>
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" id="Name" placeholder="Enter Your Name" name="name" value="{{nhanviens.name}}">
+
+  </div>
+  <div class="form-group">
+    <label for="Adress">Adress</label>
+    <input type="text" class="form-control" id="Adress" placeholder="Adress" name="adress" value="{{nhanviens.adress}}">
+  </div>
+    <div class="form-group">
+    <label for="Salary">Salary</label>
+    <input type="number" class="form-control" id="Salry" placeholder="Salary" name="salary"value="{{nhanviens.salary}}">
+  </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">sua message</button>
+      </div>
+</form>

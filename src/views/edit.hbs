@@ -1,24 +1,73 @@
-    <h2>Sua Nhan Vien</h2>
-  
+<h2>Sua Quần Aó</h2>
 
-  <form action="/{{nhanviens._id}}/edit?_method=PUT" method="post">
+
+<form action="/{{quanaos._id}}/edit?_method=PUT" id="form" method="post" name="form1" onsubmit="return validateform()">
+  <div class="form-group">
+    <label for="Masp">Masp</label>
+    <input type="text" class="form-control" id="masp" placeholder="Masp" name="masp" value="{{quanaos.masp}}">
+
+  </div>
   <div class="form-group">
     <label for="Name">Name</label>
-    <input type="text" class="form-control" id="Name" placeholder="Enter Your Name" name="name" value="{{nhanviens.name}}">
+    <input type="text" class="form-control" id="name" placeholder="Enter Your Name" name="name"
+      value="{{quanaos.name}}">
 
   </div>
   <div class="form-group">
-    <label for="Adress">Adress</label>
-    <input type="text" class="form-control" id="Adress" placeholder="Adress" name="adress" value="{{nhanviens.adress}}">
-  </div>
-    <div class="form-group">
-    <label for="Salary">Salary</label>
-    <input type="number" class="form-control" id="Salry" placeholder="Salary" name="salary"value="{{nhanviens.salary}}">
-  </div>
+    <label for="Img">Img</label>
+    <input type="text" class="form-control" id="img" placeholder="img" name="img" value="{{quanaos.img}}">
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">sua</button>
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="Name">Quantity</label>
+    <input type="number" class="form-control" id="quantity" placeholder="Quantity" name="quantity"
+      value="{{quanaos.quantity}}">
+
+  </div>
+  <div class="form-group">
+    <label for="Adress">Cost</label>
+    <input type="number" class="form-control" id="cost" placeholder="Cost" name="cost" value="{{quanaos.cost}}">
+
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button>
+      <button type="button" class="btn btn-primary" id="sua">sua</button>
+    </div>
 </form>
+<script>
+  var btn = document.getElementById('sua')
+  btn.onclick = function () {
+    var masp = document.getElementById('masp')
+    var  name= document.getElementById('name')
+    var img = document.getElementById('img')
+    var quantity = document.getElementById('quantity')
 
+    var cost = document.getElementById('cost')
+    var actionform = document.getElementById('form')
+    if (name.value == null || name.value.length == 0 ) {
+      alert('không được để trống name')
+    } if(masp.value.length==0){
+      alert('không được để trống masp')
+    } 
+     if(img.value.length==0){
+      alert('không được để trống img')
+    } 
+     if(quantity.value<=0){
+      alert('số lượng phải lớn hơn 0')
+    } 
+     if(cost.value<=0){
+      alert('giá bán phải lớn hơn 0')
+    } 
+    
+    
+    
+    else {
+      btn.type = "submit"
+    }
+  }
+
+
+
+
+
+</script>

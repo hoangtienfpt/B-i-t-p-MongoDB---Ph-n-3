@@ -1,4 +1,4 @@
-const nhanvienrouter = require('./nhanvienrouter')
+const quanaorouter = require('./quanaorouter')
 
 
 function routefunction(app){
@@ -6,7 +6,7 @@ function routefunction(app){
         res.render('layoutAdd_sua' , {layout:'main2'})
     })
 
-    app.use('/' , nhanvienrouter)
+    app.use('/' , quanaorouter)
 
 
     

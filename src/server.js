@@ -17,16 +17,16 @@ app.use(express.json())
 app.use(methodOverride('_method'))
 
 
-app.engine('hbs' , handlebars.engine({extname:"hbs" , 
-helpers:{
-    sum:(a , b) => a+b
-}
-})
-)
+    app.engine('hbs' , handlebars.engine({extname:"hbs" , 
+    helpers:{
+        sum:(a , b) => a+b
+    }
+    })
+    )
 
 
-app.set('view engine' , 'hbs');
-app.set('views' , path.join(__dirname , 'views'));
+    app.set('view engine' , 'hbs');
+    app.set('views' , path.join(__dirname , 'views'));
 
 
 roter(app)

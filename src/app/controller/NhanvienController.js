@@ -9,7 +9,7 @@ async index(req , res , next){
    nhanvienmodel.find({})
    .then(nhanviens=>{
     nhanviens = nhanviens.map(nhanvien=>nhanvien.toObject())
-    console.log(nhanviens)
+  
     res.render('home' , {nhanviens})
    }).catch(err=>next(err))
 }
@@ -26,13 +26,14 @@ newNhanvien.save()
    nhanvienmodel.findById({_id:req.params.id})
    .then(nhanviens=>{
    nhanviens = mongooseToObject(nhanviens)
-    
- 
+
+   
     res.render('edit' , {layout:'main2' , nhanviens } )
 
    }).catch(err=>next(err))
 }
 update(req , res , next){
+ 
  nhanvienmodel.updateOne({_id:req.params.id} , req.body)
  .then(()=>res.redirect('/'))
  .catch(err=>{

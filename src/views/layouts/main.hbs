@@ -157,10 +157,13 @@
   console.log(id)
 
 })
+
 var deleteform =document.forms['delete_staff']
+console.log(deleteform)
 var btndeleteid = document.getElementById('btndeletenhanvien')
 btndeleteid.onclick = function(){
     deleteform.action = `/${id}/delete?_method=DELETE`
+
     deleteform.submit();
     console.log('thành côn')
 }

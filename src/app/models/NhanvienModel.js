@@ -4,9 +4,9 @@ const schema = mongoose.Schema;
 
 
 const nhanvien = new schema({
-    name:{type:String}, 
+    name:{type:String }, 
     adress:{type:String},
-    salary:{type:Number},
+    salary:{type:Number }
 
 } , {timestamps:true,})
 module.exports = mongoose.model('staff' , nhanvien);
